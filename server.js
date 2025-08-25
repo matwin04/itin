@@ -3,10 +3,7 @@ import path from "path";
 import dotenv from "dotenv";
 import { engine } from "express-handlebars";
 import { fileURLToPath } from "url";
-import * as amtrak from "amtrak";
-import fetch from "node-fetch";
-import fs from "fs/promises";
-import { existsSync, mkdirSync } from "fs";
+
 dotenv.config();
 
 const app = express();
