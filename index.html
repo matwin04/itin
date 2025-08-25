@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Itinerary Builder</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+<h1>Itinerary Builder</h1>
+
+<div class="toolbar">
+  <button id="saveBtn" type="button">Save to file (.json)</button>
+  <button id="clearBtn" type="button">Clear all</button>
+</div>
+
+<div class="table-wrap">
+  <table id="itineraryTable">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Train</th>
+      <th>Origin</th>
+      <th>Destination</th>
+      <th>Depart</th>
+      <th>Arrive</th>
+      <th>Notes</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody id="rowsBody"></tbody>
+
+    <tfoot>
+    <tr>
+      <td class="muted">new</td>
+      <td><input id="inTrain" placeholder="ML608" /></td>
+      <td><input id="inOrigin" placeholder="IRV" /></td>
+      <td><input id="inDest" placeholder="LAX" /></td>
+      <td>
+        <input type="date" id="inDepartDate" />
+        <input type="time" id="inDepartTime" step="60" />
+      </td>
+      <td>
+        <input type="date" id="inArriveDate" />
+        <input type="time" id="inArriveTime" step="60" />
+      </td>
+      <td><input id="inNotes" placeholder="Coach seat" /></td>
+      <td><button id="addBtn" type="button">Add Train</button></td>
+    </tr>
+    </tfoot>
+  </table>
+</div>
+
+<!-- Just one script. No imports. -->
+<script src="/src/itinerary.js" defer></script>
+</body>
+</html>

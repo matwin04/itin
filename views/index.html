@@ -1,16 +1,76 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <title>Title</title>
-        <link rel="stylesheet" href="styles.css" />
-        <script src="script.js"></script>
+        <meta charset="utf-8" />
+        <title>Itinerary Builder</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th,
+            td {
+                border: 1px solid #ccc;
+                padding: 6px;
+            }
+            tfoot input {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .mono {
+                font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            }
+        </style>
     </head>
     <body>
-        <h1 class="title">Hello World</h1>
-        <div id="mainDiv">Hello Div</div>
+        <h1>Itinerary Builder</h1>
+
+        <div>
+            <button id="saveBtn" type="button">Save to file (.json)</button>
+        </div>
         <br />
-        <button onclick="buttonClicked()">Click me</button>
-        
+
+        <table id="itineraryTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Train</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Depart</th>
+                    <th>Arrive</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="rowsBody">
+                <!-- rows rendered here -->
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td style="color: #666">new</td>
+                    <td><input id="inTrain" placeholder="ML608" /></td>
+                    <td><input id="inOrigin" placeholder="IRV" /></td>
+                    <td><input id="inDest" placeholder="LAX" /></td>
+                    <td>
+                        <input type="date" id="inDepartDate" />
+                        <input type="time" id="inDepartTime" step="60" />
+                    </td>
+                    <td>
+                        <input type="date" id="inArriveDate" />
+                        <input type="time" id="inArriveTime" step="60" />
+                    </td>
+                    <td><input id="inNotes" placeholder="Coach seat" /></td>
+                    <td>
+                        <button id="addBtn" type="button">Add Train</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- IMPORTANT: use defer so DOM exists before JS runs -->
+        <script src="/public/js/itinerary.js" defer></script>
     </body>
 </html>

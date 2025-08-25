@@ -30,6 +30,9 @@ app.get("/", async (req, res) => {
 app.get("/about", (req, res) => {
     res.render("about");
 });
+app.get("/itinerary", (req, res) => {
+    res.render("itinerary");
+});
 
 if (!process.env.VERCEL && !process.env.NOW_REGION) {
     const PORT = process.env.PORT || 8088;
