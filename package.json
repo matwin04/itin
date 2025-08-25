@@ -16,7 +16,6 @@
     "esbuild": "^0.25.9",
     "express": "^5.1.0",
     "express-handlebars": "^8.0.3",
-    "fsevents": "^2.3.3",
     "nanoid": "^3.3.11",
     "picocolors": "^1.1.1",
     "postcss": "^8.5.6",
